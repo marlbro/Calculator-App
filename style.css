@@ -1,0 +1,42 @@
+* {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.calculator-grid {
+  border: black solid 2px;
+}
+
+.numbers {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-template-rows: auto auto auto;
+
+  height: 10px;
+  width: 20px;
+  font-size: 10px;
+  /* align-items: center; */
+
+  align-self: baseline;
+}
+
+.numberBtns {
+  font-size: 39px;
+
+  height: 100px;
+  width: 100px;
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+.operators {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto auto auto auto;
+  justify-content: space-around;
+}
+
+.math_buttons {
+  font-size: 39px;
+  width: 80px;
+  margin: 10px;
+}
