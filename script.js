@@ -48,8 +48,6 @@ const btns_per_row = 4;
 
 calc_buttons.forEach((button, index) => {});
 
-// each button sends string to textarea input = operation = function?
-
 /*
 
 const subtract = function (oper) {};
