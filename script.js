@@ -69,6 +69,8 @@ calc_buttons.forEach((button, index) => {
   added_btns++;
 });
 
+function calculator(type) {}
+
 input.addEventListener("click", (event) => {
   const target_btn = event.target;
   calc_buttons.forEach((button) => {
