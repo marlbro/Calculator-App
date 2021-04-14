@@ -1,5 +1,8 @@
 "use strict";
 
+// html elements
+const input = document.querySelector(".input");
+
 let calc_buttons = [];
 
 const clear = {
@@ -26,7 +29,7 @@ const add = {
 const divide = {
   name: "division",
   symbol: "÷",
-  formula: "÷",
+  formula: "/",
   type: "operator",
 };
 
@@ -37,7 +40,14 @@ const subtract = {
   type: "operator",
 };
 
-calc_buttons.push(clear, multiply, add, subtract, divide);
+const calculate = {
+  name: "calculate",
+  symbol: "=",
+  formula: "=",
+  type: "calculate",
+};
+
+calc_buttons.push(clear, multiply, add, subtract, divide, calculate);
 
 console.log(calc_buttons);
 
@@ -45,14 +55,34 @@ console.log(calc_buttons);
 // console.log(key, value)
 
 const btns_per_row = 4;
+let added_btns = 0;
 
-calc_buttons.forEach((button, index) => {});
+calc_buttons.forEach((button, index) => {
+  if (added_btns % btns_per_row == 0) {
+    document.querySelector(".input").innerHTML += `<div class="row"></div>`;
+  }
+
+  document.querySelector(
+    ".row:last-child"
+  ).innerHTML += `<button id="${button.name}">${button.symbol}</button>`;
+
+  added_btns++;
+});
+
+input.addEventListener("click", (event) => {
+  const target_btn = event.target;
+  calc_buttons.forEach((button) => {
+    if (button.name == target_btn.id) calculator(button);
+  });
+});
+
+let data = {
+  operation: [],
+  result: [],
+};
 
 /*
 
-const subtract = function (oper) {};
-const divide = function (oper) {};
-const multiply = function (oper) {};
-
 */
+
 // responsive to a keypad & keyboard numbers
