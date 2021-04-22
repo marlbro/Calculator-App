@@ -69,7 +69,12 @@ calc_buttons.forEach((button, index) => {
   added_btns++;
 });
 
-function calculator(type) {}
+function calculator(type) {
+  let data = {
+    operation: [],
+    result: [],
+  };
+}
 
 input.addEventListener("click", (event) => {
   const target_btn = event.target;
@@ -77,11 +82,6 @@ input.addEventListener("click", (event) => {
     if (button.name == target_btn.id) calculator(button);
   });
 });
-
-let data = {
-  operation: [],
-  result: [],
-};
 
 /*
 
